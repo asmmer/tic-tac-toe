@@ -1,0 +1,9 @@
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\bin\Debug\TicTacToe.exe
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\bin\Debug\TicTacToe.pdb
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.csprojAssemblyReference.cache
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.MainForm.resources
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.Properties.Resources.resources
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateResource.cache
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.exe
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.pdb
