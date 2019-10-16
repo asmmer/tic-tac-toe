@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             this.GameNameTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.SidePanel = new System.Windows.Forms.Panel();
+            this.AboutProgramButton = new System.Windows.Forms.Button();
+            this.SidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameNameTitle
             // 
-            this.GameNameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameNameTitle.AutoSize = true;
             this.GameNameTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GameNameTitle.Location = new System.Drawing.Point(3, 9);
+            this.GameNameTitle.Location = new System.Drawing.Point(12, 9);
             this.GameNameTitle.Name = "GameNameTitle";
-            this.GameNameTitle.Size = new System.Drawing.Size(162, 45);
+            this.GameNameTitle.Size = new System.Drawing.Size(175, 50);
             this.GameNameTitle.TabIndex = 0;
             this.GameNameTitle.Text = "TicTacToe";
             // 
-            // panel1
+            // SidePanel
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.GameNameTitle);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 100);
-            this.panel1.TabIndex = 1;
+            this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.SidePanel.Controls.Add(this.AboutProgramButton);
+            this.SidePanel.Controls.Add(this.GameNameTitle);
+            this.SidePanel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.SidePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SidePanel.Location = new System.Drawing.Point(0, 0);
+            this.SidePanel.Name = "SidePanel";
+            this.SidePanel.Size = new System.Drawing.Size(200, 561);
+            this.SidePanel.TabIndex = 1;
             // 
-            // button1
+            // AboutProgramButton
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(722, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "?";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AboutProgramButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AboutProgramButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AboutProgramButton.FlatAppearance.BorderSize = 0;
+            this.AboutProgramButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.AboutProgramButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AboutProgramButton.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutProgramButton.Location = new System.Drawing.Point(12, 499);
+            this.AboutProgramButton.Name = "AboutProgramButton";
+            this.AboutProgramButton.Size = new System.Drawing.Size(175, 50);
+            this.AboutProgramButton.TabIndex = 1;
+            this.AboutProgramButton.Text = "?";
+            this.AboutProgramButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -77,14 +77,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SidePanel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.Text = "TicTacToe";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.SidePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -92,8 +91,8 @@
         #endregion
 
         private System.Windows.Forms.Label GameNameTitle;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel SidePanel;
+        private System.Windows.Forms.Button AboutProgramButton;
     }
 }
 
