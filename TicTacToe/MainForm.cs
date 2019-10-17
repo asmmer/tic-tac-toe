@@ -14,6 +14,29 @@ namespace TicTacToe
         public MainForm()
         {
             InitializeComponent();
+
+            Classes.Grid _grid = new Classes.Grid(2);
+
+            List<Button> grid = _grid.GetGrid();
+            
+            foreach (Button cell in grid)
+            {
+                GridPanel.Controls.Add(cell);
+            }
+        }
+
+        // Handlers.
+
+        private void AboutProgramButton_Click(object sender, EventArgs e)
+        {
+            OpenAboutProgramForm();
+        }
+
+        // Methods.
+
+        private void OpenAboutProgramForm()
+        {
+            new AboutProgramForm().ShowDialog();
         }
     }
 }

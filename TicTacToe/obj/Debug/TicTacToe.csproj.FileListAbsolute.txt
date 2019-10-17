@@ -7,3 +7,4 @@ C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\T
 C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
 C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.exe
 C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\Litovsky-PC\Desktop\Web\main projects\tic-tac-toe\TicTacToe\obj\Debug\TicTacToe.AboutProgramForm.resources

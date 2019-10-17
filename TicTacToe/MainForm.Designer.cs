@@ -31,15 +31,17 @@
             this.GameNameTitle = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.AboutProgramButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.GridPanel = new System.Windows.Forms.Panel();
             this.SidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameNameTitle
             // 
-            this.GameNameTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GameNameTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GameNameTitle.Location = new System.Drawing.Point(12, 9);
             this.GameNameTitle.Name = "GameNameTitle";
-            this.GameNameTitle.Size = new System.Drawing.Size(175, 50);
+            this.GameNameTitle.Size = new System.Drawing.Size(175, 41);
             this.GameNameTitle.TabIndex = 0;
             this.GameNameTitle.Text = "TicTacToe";
             // 
@@ -60,6 +62,7 @@
             this.AboutProgramButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AboutProgramButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AboutProgramButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.AboutProgramButton.FlatAppearance.BorderSize = 0;
             this.AboutProgramButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.AboutProgramButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -70,6 +73,26 @@
             this.AboutProgramButton.TabIndex = 1;
             this.AboutProgramButton.Text = "?";
             this.AboutProgramButton.UseVisualStyleBackColor = true;
+            this.AboutProgramButton.Click += new System.EventHandler(this.AboutProgramButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(200, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(584, 50);
+            this.panel1.TabIndex = 2;
+            // 
+            // GridPanel
+            // 
+            this.GridPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.GridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridPanel.Location = new System.Drawing.Point(200, 50);
+            this.GridPanel.Name = "GridPanel";
+            this.GridPanel.Size = new System.Drawing.Size(584, 511);
+            this.GridPanel.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -77,11 +100,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.GridPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.SidePanel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicTacToe";
             this.SidePanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -93,6 +119,8 @@
         private System.Windows.Forms.Label GameNameTitle;
         private System.Windows.Forms.Panel SidePanel;
         private System.Windows.Forms.Button AboutProgramButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel GridPanel;
     }
 }
 
