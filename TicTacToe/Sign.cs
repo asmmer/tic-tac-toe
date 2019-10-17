@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TicTacToe.Classes
+namespace TicTacToe
 {
     public enum Sign
     {

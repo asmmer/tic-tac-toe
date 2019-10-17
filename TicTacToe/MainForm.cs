@@ -15,7 +15,7 @@ namespace TicTacToe
         {
             InitializeComponent();
 
-            Classes.Grid _grid = new Classes.Grid(2);
+            Grid _grid = new Grid(2);
 
             List<Button> grid = _grid.GetGrid();
             
