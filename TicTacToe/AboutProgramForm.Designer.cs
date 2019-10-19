@@ -38,7 +38,7 @@
             this.HowToPlayLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HowToPlayLabel.Location = new System.Drawing.Point(0, 0);
             this.HowToPlayLabel.Name = "HowToPlayLabel";
-            this.HowToPlayLabel.Size = new System.Drawing.Size(784, 50);
+            this.HowToPlayLabel.Size = new System.Drawing.Size(784, 75);
             this.HowToPlayLabel.TabIndex = 2;
             this.HowToPlayLabel.Text = "How to play";
             this.HowToPlayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

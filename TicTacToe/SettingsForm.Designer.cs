@@ -41,10 +41,12 @@
             this.DarkThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.LightThemeRadioButton = new System.Windows.Forms.RadioButton();
             this.ThemeLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.GridSizePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SetGridSizeNUD)).BeginInit();
             this.GameModePanel.SuspendLayout();
             this.ThemePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SettingsTitle
@@ -54,7 +56,7 @@
             this.SettingsTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SettingsTitle.Location = new System.Drawing.Point(0, 0);
             this.SettingsTitle.Name = "SettingsTitle";
-            this.SettingsTitle.Size = new System.Drawing.Size(784, 50);
+            this.SettingsTitle.Size = new System.Drawing.Size(784, 75);
             this.SettingsTitle.TabIndex = 1;
             this.SettingsTitle.Text = "Settings";
             this.SettingsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,7 +66,7 @@
             this.GridSizePanel.Controls.Add(this.SetGridSizeNUD);
             this.GridSizePanel.Controls.Add(this.GridSizeLabel);
             this.GridSizePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GridSizePanel.Location = new System.Drawing.Point(0, 50);
+            this.GridSizePanel.Location = new System.Drawing.Point(0, 75);
             this.GridSizePanel.Name = "GridSizePanel";
             this.GridSizePanel.Size = new System.Drawing.Size(784, 50);
             this.GridSizePanel.TabIndex = 5;
@@ -99,7 +101,7 @@
             // 
             this.GridSizeLabel.AutoSize = true;
             this.GridSizeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GridSizeLabel.Location = new System.Drawing.Point(5, 13);
+            this.GridSizeLabel.Location = new System.Drawing.Point(15, 13);
             this.GridSizeLabel.Name = "GridSizeLabel";
             this.GridSizeLabel.Size = new System.Drawing.Size(72, 21);
             this.GridSizeLabel.TabIndex = 2;
@@ -107,17 +109,15 @@
             // 
             // SaveSettingsButton
             // 
-            this.SaveSettingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveSettingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveSettingsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.SaveSettingsButton.FlatAppearance.BorderSize = 0;
             this.SaveSettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.SaveSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveSettingsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveSettingsButton.Location = new System.Drawing.Point(310, 399);
+            this.SaveSettingsButton.Location = new System.Drawing.Point(12, 13);
             this.SaveSettingsButton.Name = "SaveSettingsButton";
-            this.SaveSettingsButton.Size = new System.Drawing.Size(159, 50);
+            this.SaveSettingsButton.Size = new System.Drawing.Size(760, 50);
             this.SaveSettingsButton.TabIndex = 6;
             this.SaveSettingsButton.Text = "Save";
             this.SaveSettingsButton.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.GameModePanel.Controls.Add(this.PVPRadioButton);
             this.GameModePanel.Controls.Add(this.GameModeLabel);
             this.GameModePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GameModePanel.Location = new System.Drawing.Point(0, 100);
+            this.GameModePanel.Location = new System.Drawing.Point(0, 125);
             this.GameModePanel.Name = "GameModePanel";
             this.GameModePanel.Size = new System.Drawing.Size(784, 50);
             this.GameModePanel.TabIndex = 7;
@@ -143,7 +143,7 @@
             this.PVBRadioButton.Size = new System.Drawing.Size(121, 25);
             this.PVBRadioButton.TabIndex = 3;
             this.PVBRadioButton.TabStop = true;
-            this.PVBRadioButton.Tag = "1";
+            this.PVBRadioButton.Tag = "PlayerVSBot";
             this.PVBRadioButton.Text = "Player VS Bot";
             this.PVBRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -156,7 +156,7 @@
             this.PVPRadioButton.Size = new System.Drawing.Size(141, 25);
             this.PVPRadioButton.TabIndex = 3;
             this.PVPRadioButton.TabStop = true;
-            this.PVPRadioButton.Tag = "0";
+            this.PVPRadioButton.Tag = "PlayerVSPlayer";
             this.PVPRadioButton.Text = "Player VS Player";
             this.PVPRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -164,7 +164,7 @@
             // 
             this.GameModeLabel.AutoSize = true;
             this.GameModeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GameModeLabel.Location = new System.Drawing.Point(5, 13);
+            this.GameModeLabel.Location = new System.Drawing.Point(15, 13);
             this.GameModeLabel.Name = "GameModeLabel";
             this.GameModeLabel.Size = new System.Drawing.Size(100, 21);
             this.GameModeLabel.TabIndex = 2;
@@ -176,7 +176,7 @@
             this.ThemePanel.Controls.Add(this.LightThemeRadioButton);
             this.ThemePanel.Controls.Add(this.ThemeLabel);
             this.ThemePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ThemePanel.Location = new System.Drawing.Point(0, 150);
+            this.ThemePanel.Location = new System.Drawing.Point(0, 175);
             this.ThemePanel.Name = "ThemePanel";
             this.ThemePanel.Size = new System.Drawing.Size(784, 50);
             this.ThemePanel.TabIndex = 8;
@@ -190,7 +190,7 @@
             this.DarkThemeRadioButton.Size = new System.Drawing.Size(61, 25);
             this.DarkThemeRadioButton.TabIndex = 3;
             this.DarkThemeRadioButton.TabStop = true;
-            this.DarkThemeRadioButton.Tag = "1";
+            this.DarkThemeRadioButton.Tag = "Dark";
             this.DarkThemeRadioButton.Text = "Dark";
             this.DarkThemeRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -203,7 +203,7 @@
             this.LightThemeRadioButton.Size = new System.Drawing.Size(63, 25);
             this.LightThemeRadioButton.TabIndex = 3;
             this.LightThemeRadioButton.TabStop = true;
-            this.LightThemeRadioButton.Tag = "0";
+            this.LightThemeRadioButton.Tag = "Light";
             this.LightThemeRadioButton.Text = "Light";
             this.LightThemeRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -211,11 +211,20 @@
             // 
             this.ThemeLabel.AutoSize = true;
             this.ThemeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ThemeLabel.Location = new System.Drawing.Point(5, 13);
+            this.ThemeLabel.Location = new System.Drawing.Point(15, 13);
             this.ThemeLabel.Name = "ThemeLabel";
             this.ThemeLabel.Size = new System.Drawing.Size(60, 21);
             this.ThemeLabel.TabIndex = 2;
             this.ThemeLabel.Text = "Theme";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.SaveSettingsButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 386);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(784, 75);
+            this.panel1.TabIndex = 9;
             // 
             // SettingsForm
             // 
@@ -223,9 +232,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ThemePanel);
             this.Controls.Add(this.GameModePanel);
-            this.Controls.Add(this.SaveSettingsButton);
             this.Controls.Add(this.GridSizePanel);
             this.Controls.Add(this.SettingsTitle);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -242,6 +251,7 @@
             this.GameModePanel.PerformLayout();
             this.ThemePanel.ResumeLayout(false);
             this.ThemePanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -261,5 +271,6 @@
         private System.Windows.Forms.RadioButton DarkThemeRadioButton;
         private System.Windows.Forms.RadioButton LightThemeRadioButton;
         private System.Windows.Forms.Label ThemeLabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

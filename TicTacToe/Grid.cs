@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TicTacToe
@@ -32,6 +30,10 @@ namespace TicTacToe
                     cellButton.Size = new Size(50, 50);
                     cellButton.Location = new Point(rows * 50, columns * 50);
                     cellButton.Cursor = Cursors.Hand;
+                    cellButton.FlatStyle = FlatStyle.Flat;
+                    cellButton.FlatAppearance.BorderColor = Color.FromArgb(215, 215, 215);
+                    cellButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(210, 210, 210);
+                    cellButton.TabStop = false;
                     cellButton.Click += CellButton_Click;
 
                     grid.Add(cellButton);
