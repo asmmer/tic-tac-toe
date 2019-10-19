@@ -15,11 +15,52 @@ namespace TicTacToe
         {
             InitializeComponent();
 
-            game = new Game(GridPanel);
+            game = new Game();
         }
 
         // Methods.
+        private void StartGame()
+        {
+            ClearGrid();
 
+            game.Start();
+
+            SetTurnValue(game.order);
+            SetGrid(game.GetGrid());
+            SetTopPanelEnabled(true);
+        }
+
+        private void SetTopPanelEnabled(bool enabled)
+        {
+            TopPanel.Enabled = enabled;
+        }
+
+        private void SetTurnValue(Sign order)
+        {
+            TurnValue.Text = $"{order}";
+        }
+
+        private void SetGrid(List<Button> grid)
+        {
+            if (GridPanel.Controls.Count == 0 && 
+                GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
+            {
+                foreach (Button cell in grid)
+                {
+                    GridPanel.Controls.Add(cell);
+                }
+            }
+        }
+
+        private void ClearGrid()
+        {
+            if (GridPanel.Controls.Count > 0 &&
+                GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
+            {
+                GridPanel.Controls.Clear();
+            }
+
+        }
 
         private void OpenSettingsForm()
         {
@@ -44,7 +85,7 @@ namespace TicTacToe
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            game.Start();
+            StartGame();
         }
     }
 }

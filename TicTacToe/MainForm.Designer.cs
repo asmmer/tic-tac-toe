@@ -35,7 +35,12 @@
             this.AboutProgramButton = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.GridPanel = new System.Windows.Forms.Panel();
+            this.TurnLabel = new System.Windows.Forms.Label();
+            this.TurnPanel = new System.Windows.Forms.Panel();
+            this.TurnValue = new System.Windows.Forms.Label();
             this.SidePanel.SuspendLayout();
+            this.TopPanel.SuspendLayout();
+            this.TurnPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameNameTitle
@@ -120,8 +125,10 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.TopPanel.Controls.Add(this.TurnPanel);
             this.TopPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.Enabled = false;
             this.TopPanel.Location = new System.Drawing.Point(200, 0);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(584, 75);
@@ -135,6 +142,35 @@
             this.GridPanel.Name = "GridPanel";
             this.GridPanel.Size = new System.Drawing.Size(584, 486);
             this.GridPanel.TabIndex = 3;
+            // 
+            // TurnLabel
+            // 
+            this.TurnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TurnLabel.Location = new System.Drawing.Point(0, 0);
+            this.TurnLabel.Name = "TurnLabel";
+            this.TurnLabel.Size = new System.Drawing.Size(125, 75);
+            this.TurnLabel.TabIndex = 1;
+            this.TurnLabel.Text = "Turn:";
+            this.TurnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TurnPanel
+            // 
+            this.TurnPanel.Controls.Add(this.TurnValue);
+            this.TurnPanel.Controls.Add(this.TurnLabel);
+            this.TurnPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TurnPanel.Location = new System.Drawing.Point(0, 0);
+            this.TurnPanel.Name = "TurnPanel";
+            this.TurnPanel.Size = new System.Drawing.Size(200, 75);
+            this.TurnPanel.TabIndex = 2;
+            // 
+            // TurnValue
+            // 
+            this.TurnValue.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TurnValue.Location = new System.Drawing.Point(125, 0);
+            this.TurnValue.Name = "TurnValue";
+            this.TurnValue.Size = new System.Drawing.Size(75, 75);
+            this.TurnValue.TabIndex = 1;
+            this.TurnValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
@@ -152,6 +188,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicTacToe";
             this.SidePanel.ResumeLayout(false);
+            this.TopPanel.ResumeLayout(false);
+            this.TurnPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -165,6 +203,9 @@
         private System.Windows.Forms.Panel GridPanel;
         private System.Windows.Forms.Button SettingsButton;
         private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.Panel TurnPanel;
+        private System.Windows.Forms.Label TurnLabel;
+        private System.Windows.Forms.Label TurnValue;
     }
 }
 

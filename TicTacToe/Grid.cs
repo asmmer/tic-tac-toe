@@ -9,16 +9,20 @@ namespace TicTacToe
     {
         List<Button> grid = new List<Button>();
 
-        public Grid(int gridSize)
-        {
-            SetGrid(gridSize);
-        }
-
         public void SetGrid(int gridSize)
         {
+            if (gridSize < Constants.MIN_GRID_SIZE || gridSize > Constants.MAX_GRID_SIZE)
+            {
+                MessageBox.Show($"Size is equals - {gridSize}. Need to pick another.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+
             if (grid.Count > 0)
             {
-                grid.Clear();
+                ClearGrid();
             }
 
             for (int rows = 0; rows < gridSize; rows++)
@@ -44,6 +48,11 @@ namespace TicTacToe
         public List<Button> GetGrid()
         {
             return grid;
+        }
+
+        public void ClearGrid()
+        {
+            grid.Clear();
         }
 
         private void CellButton_Click(object sender, EventArgs e)

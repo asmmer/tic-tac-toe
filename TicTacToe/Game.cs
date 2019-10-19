@@ -1,30 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace TicTacToe
 {
     class Game
     {
-        public bool isStarted = false;
+        public Sign order;
 
-        public int xScore = 0,
-                   oScore = 0;
+        private bool isStarted = false;
 
-        Panel gridPanel = null;
-        Grid grid = null;
+        int xScore = 0,
+            oScore = 0;
 
-        public Game(Panel gridPanel)
-        {
-            this.gridPanel = gridPanel;
-        }
+        Grid grid = new Grid();
+
+        readonly Random random = new Random();
 
         public void Start()
         {
             isStarted = true;
-            SetGrid(Settings.gridSize);
+            order = (random.Next(2) == 0) ? Sign.X : Sign.O;
+
+            SetGrid();
         }
 
-        public void Stop()
+        public void Pause()
         {
             isStarted = false;
         }
@@ -37,35 +38,22 @@ namespace TicTacToe
             grid = null;
         }
 
-        private void ClearGrid()
+        private void SetGrid()
         {
-            gridPanel.Controls.Clear();
+            if (grid == null || (grid.GetGrid().Count / Settings.gridSize) != Settings.gridSize)
+            {
+                grid.SetGrid(Settings.gridSize);
+            }
         }
 
-        private void SetGrid(int gridSize)
+        public List<Button> GetGrid()
         {
-            if (gridPanel.Controls.Count > 0)
-            {
-                ClearGrid();
-            }
+            return grid.GetGrid();
+        }
 
-            if (gridSize < Constants.MIN_GRID_SIZE || gridSize > Constants.MAX_GRID_SIZE)
-            {
-                MessageBox.Show($"Size is equals - {gridSize}. Need to pick another.",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                return;
-            }
-
-            grid = new Grid(gridSize);
-
-            List<Button> cells = grid.GetGrid();
-
-            foreach (Button cell in cells)
-            {
-                gridPanel.Controls.Add(cell);
-            }
+        private void ClearGrid()
+        {
+            grid.ClearGrid();
         }
     }
 }
