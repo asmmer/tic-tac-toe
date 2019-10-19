@@ -14,15 +14,45 @@ namespace TicTacToe
         public MainForm()
         {
             InitializeComponent();
+        }
 
-            Grid _grid = new Grid(2);
+
+        // Methods.
+
+        private void ClearGrid()
+        {
+            GridPanel.Controls.Clear();
+        }
+
+        private void CreateGrid(int gridSize)
+        {
+            if (GridPanel.Controls.Count > 0)
+            {
+                ClearGrid();
+            }
+
+            if (gridSize < Constants.MIN_GRID_SIZE || gridSize > Constants.MAX_GRID_SIZE)
+            {
+                MessageBox.Show($"Size is equals - {gridSize}. Need to pick another.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+
+            Grid _grid = new Grid(gridSize);
 
             List<Button> grid = _grid.GetGrid();
-            
+
             foreach (Button cell in grid)
             {
                 GridPanel.Controls.Add(cell);
             }
+        }
+
+        private void OpenAboutProgramForm()
+        {
+            new AboutProgramForm().ShowDialog();
         }
 
         // Handlers.
@@ -32,11 +62,9 @@ namespace TicTacToe
             OpenAboutProgramForm();
         }
 
-        // Methods.
-
-        private void OpenAboutProgramForm()
+        private void SetGridSizeNUD_ValueChanged(object sender, EventArgs e)
         {
-            new AboutProgramForm().ShowDialog();
+            CreateGrid(Convert.ToByte(SetGridSizeNUD.Value));
         }
     }
 }

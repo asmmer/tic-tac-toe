@@ -11,18 +11,31 @@ namespace TicTacToe
     {
         List<Button> grid = new List<Button>();
 
-        public Grid(int size)
+        public Grid(int gridSize)
         {
-            for (int i = 0; i < size; i++)
+            SetGrid(gridSize);
+        }
+
+        public void SetGrid(int gridSize)
+        {
+            if (grid.Count > 0)
             {
-                Button cellButton = new Button();
+                grid.Clear();
+            }
 
-                cellButton.Size = new Size(50, 50);
-                // Position setting.
-                cellButton.Cursor = Cursors.Hand;
-                cellButton.Click += CellButton_Click;
+            for (int rows = 0; rows < gridSize; rows++)
+            {
+                for (int columns = 0; columns < gridSize; columns++)
+                {
+                    Button cellButton = new Button();
 
-                grid.Add(cellButton);
+                    cellButton.Size = new Size(50, 50);
+                    cellButton.Location = new Point(rows * 50, columns * 50);
+                    cellButton.Cursor = Cursors.Hand;
+                    cellButton.Click += CellButton_Click;
+
+                    grid.Add(cellButton);
+                }
             }
         }
 

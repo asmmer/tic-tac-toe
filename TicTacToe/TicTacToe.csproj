@@ -51,6 +51,7 @@
       <DependentUpon>AboutProgramForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bot.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="Sign.cs" />

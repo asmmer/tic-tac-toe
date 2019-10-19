@@ -33,21 +33,29 @@
             this.AboutProgramButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GridPanel = new System.Windows.Forms.Panel();
+            this.GridSizeLabel = new System.Windows.Forms.Label();
+            this.GridSizePanel = new System.Windows.Forms.Panel();
+            this.SetGridSizeNUD = new System.Windows.Forms.NumericUpDown();
             this.SidePanel.SuspendLayout();
+            this.GridSizePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SetGridSizeNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // GameNameTitle
             // 
+            this.GameNameTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.GameNameTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GameNameTitle.Location = new System.Drawing.Point(12, 9);
+            this.GameNameTitle.Location = new System.Drawing.Point(0, 0);
             this.GameNameTitle.Name = "GameNameTitle";
-            this.GameNameTitle.Size = new System.Drawing.Size(175, 41);
+            this.GameNameTitle.Size = new System.Drawing.Size(200, 50);
             this.GameNameTitle.TabIndex = 0;
             this.GameNameTitle.Text = "TicTacToe";
+            this.GameNameTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.SidePanel.Controls.Add(this.GridSizePanel);
             this.SidePanel.Controls.Add(this.AboutProgramButton);
             this.SidePanel.Controls.Add(this.GameNameTitle);
             this.SidePanel.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -94,6 +102,53 @@
             this.GridPanel.Size = new System.Drawing.Size(584, 511);
             this.GridPanel.TabIndex = 3;
             // 
+            // GridSizeLabel
+            // 
+            this.GridSizeLabel.AutoSize = true;
+            this.GridSizeLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.GridSizeLabel.Location = new System.Drawing.Point(5, 13);
+            this.GridSizeLabel.Name = "GridSizeLabel";
+            this.GridSizeLabel.Size = new System.Drawing.Size(70, 21);
+            this.GridSizeLabel.TabIndex = 2;
+            this.GridSizeLabel.Text = "Grid size";
+            // 
+            // GridSizePanel
+            // 
+            this.GridSizePanel.Controls.Add(this.SetGridSizeNUD);
+            this.GridSizePanel.Controls.Add(this.GridSizeLabel);
+            this.GridSizePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GridSizePanel.Location = new System.Drawing.Point(0, 50);
+            this.GridSizePanel.Name = "GridSizePanel";
+            this.GridSizePanel.Size = new System.Drawing.Size(200, 50);
+            this.GridSizePanel.TabIndex = 4;
+            // 
+            // SetGridSizeNUD
+            // 
+            this.SetGridSizeNUD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SetGridSizeNUD.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SetGridSizeNUD.Location = new System.Drawing.Point(140, 13);
+            this.SetGridSizeNUD.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.SetGridSizeNUD.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.SetGridSizeNUD.Name = "SetGridSizeNUD";
+            this.SetGridSizeNUD.ReadOnly = true;
+            this.SetGridSizeNUD.Size = new System.Drawing.Size(54, 25);
+            this.SetGridSizeNUD.TabIndex = 5;
+            this.SetGridSizeNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SetGridSizeNUD.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.SetGridSizeNUD.ValueChanged += new System.EventHandler(this.SetGridSizeNUD_ValueChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +165,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicTacToe";
             this.SidePanel.ResumeLayout(false);
+            this.GridSizePanel.ResumeLayout(false);
+            this.GridSizePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SetGridSizeNUD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +179,9 @@
         private System.Windows.Forms.Button AboutProgramButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel GridPanel;
+        private System.Windows.Forms.Panel GridSizePanel;
+        private System.Windows.Forms.Label GridSizeLabel;
+        private System.Windows.Forms.NumericUpDown SetGridSizeNUD;
     }
 }
 
