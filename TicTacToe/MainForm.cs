@@ -11,14 +11,15 @@ namespace TicTacToe
 {
     public partial class MainForm : Form
     {
+        SettingsForm settingsForm = new SettingsForm();
+        AboutProgramForm aboutProgramForm = new AboutProgramForm();
+
         public MainForm()
         {
             InitializeComponent();
         }
 
-
         // Methods.
-
         private void ClearGrid()
         {
             GridPanel.Controls.Clear();
@@ -50,21 +51,30 @@ namespace TicTacToe
             }
         }
 
+        private void OpenSettingsForm()
+        {
+            settingsForm.ShowDialog();
+        }
+
         private void OpenAboutProgramForm()
         {
-            new AboutProgramForm().ShowDialog();
+            aboutProgramForm.ShowDialog();
         }
 
         // Handlers.
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            OpenSettingsForm();
+        }
 
         private void AboutProgramButton_Click(object sender, EventArgs e)
         {
             OpenAboutProgramForm();
         }
 
-        private void SetGridSizeNUD_ValueChanged(object sender, EventArgs e)
+        private void PlayButton_Click(object sender, EventArgs e)
         {
-            CreateGrid(Convert.ToByte(SetGridSizeNUD.Value));
+            CreateGrid(Settings.gridSize);
         }
     }
 }
