@@ -9,42 +9,17 @@ namespace TicTacToe
         SettingsForm settingsForm = new SettingsForm();
         AboutProgramForm aboutProgramForm = new AboutProgramForm();
 
+        Game game;
+
         public MainForm()
         {
             InitializeComponent();
+
+            game = new Game(GridPanel);
         }
 
         // Methods.
-        private void ClearGrid()
-        {
-            GridPanel.Controls.Clear();
-        }
 
-        private void CreateGrid(int gridSize)
-        {
-            if (GridPanel.Controls.Count > 0)
-            {
-                ClearGrid();
-            }
-
-            if (gridSize < Constants.MIN_GRID_SIZE || gridSize > Constants.MAX_GRID_SIZE)
-            {
-                MessageBox.Show($"Size is equals - {gridSize}. Need to pick another.",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                return;
-            }
-
-            Grid _grid = new Grid(gridSize);
-
-            List<Button> grid = _grid.GetGrid();
-
-            foreach (Button cell in grid)
-            {
-                GridPanel.Controls.Add(cell);
-            }
-        }
 
         private void OpenSettingsForm()
         {
@@ -69,7 +44,7 @@ namespace TicTacToe
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            CreateGrid(Settings.gridSize);
+            game.Start();
         }
     }
 }
