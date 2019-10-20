@@ -30,14 +30,15 @@
         {
             this.GameNameTitle = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.Panel();
-            this.PlayButton = new System.Windows.Forms.Button();
+            this.StartButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.AboutProgramButton = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.GridPanel = new System.Windows.Forms.Panel();
-            this.TurnLabel = new System.Windows.Forms.Label();
             this.TurnPanel = new System.Windows.Forms.Panel();
             this.TurnValue = new System.Windows.Forms.Label();
+            this.TurnLabel = new System.Windows.Forms.Label();
+            this.GridPanel = new System.Windows.Forms.Panel();
+            this.StopButton = new System.Windows.Forms.Button();
             this.SidePanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.TurnPanel.SuspendLayout();
@@ -57,7 +58,8 @@
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.SidePanel.Controls.Add(this.PlayButton);
+            this.SidePanel.Controls.Add(this.StopButton);
+            this.SidePanel.Controls.Add(this.StartButton);
             this.SidePanel.Controls.Add(this.SettingsButton);
             this.SidePanel.Controls.Add(this.AboutProgramButton);
             this.SidePanel.Controls.Add(this.GameNameTitle);
@@ -68,23 +70,23 @@
             this.SidePanel.Size = new System.Drawing.Size(200, 561);
             this.SidePanel.TabIndex = 1;
             // 
-            // PlayButton
+            // StartButton
             // 
-            this.PlayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.StartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PlayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.PlayButton.FlatAppearance.BorderSize = 0;
-            this.PlayButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PlayButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PlayButton.Location = new System.Drawing.Point(12, 87);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(175, 50);
-            this.PlayButton.TabIndex = 1;
-            this.PlayButton.Text = "Play";
-            this.PlayButton.UseVisualStyleBackColor = true;
-            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            this.StartButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.StartButton.FlatAppearance.BorderSize = 0;
+            this.StartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartButton.Location = new System.Drawing.Point(12, 87);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(175, 50);
+            this.StartButton.TabIndex = 1;
+            this.StartButton.Text = "Play";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // SettingsButton
             // 
@@ -134,25 +136,6 @@
             this.TopPanel.Size = new System.Drawing.Size(584, 75);
             this.TopPanel.TabIndex = 2;
             // 
-            // GridPanel
-            // 
-            this.GridPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.GridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridPanel.Location = new System.Drawing.Point(200, 75);
-            this.GridPanel.Name = "GridPanel";
-            this.GridPanel.Size = new System.Drawing.Size(584, 486);
-            this.GridPanel.TabIndex = 3;
-            // 
-            // TurnLabel
-            // 
-            this.TurnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TurnLabel.Location = new System.Drawing.Point(0, 0);
-            this.TurnLabel.Name = "TurnLabel";
-            this.TurnLabel.Size = new System.Drawing.Size(125, 75);
-            this.TurnLabel.TabIndex = 1;
-            this.TurnLabel.Text = "Turn:";
-            this.TurnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // TurnPanel
             // 
             this.TurnPanel.Controls.Add(this.TurnValue);
@@ -171,6 +154,44 @@
             this.TurnValue.Size = new System.Drawing.Size(75, 75);
             this.TurnValue.TabIndex = 1;
             this.TurnValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TurnLabel
+            // 
+            this.TurnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TurnLabel.Location = new System.Drawing.Point(0, 0);
+            this.TurnLabel.Name = "TurnLabel";
+            this.TurnLabel.Size = new System.Drawing.Size(125, 75);
+            this.TurnLabel.TabIndex = 1;
+            this.TurnLabel.Text = "Turn:";
+            this.TurnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // GridPanel
+            // 
+            this.GridPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.GridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridPanel.Location = new System.Drawing.Point(200, 75);
+            this.GridPanel.Name = "GridPanel";
+            this.GridPanel.Size = new System.Drawing.Size(584, 486);
+            this.GridPanel.TabIndex = 3;
+            // 
+            // StopButton
+            // 
+            this.StopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StopButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StopButton.Enabled = false;
+            this.StopButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.StopButton.FlatAppearance.BorderSize = 0;
+            this.StopButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StopButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StopButton.Location = new System.Drawing.Point(12, 143);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(175, 50);
+            this.StopButton.TabIndex = 1;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // MainForm
             // 
@@ -202,10 +223,11 @@
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Panel GridPanel;
         private System.Windows.Forms.Button SettingsButton;
-        private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Panel TurnPanel;
         private System.Windows.Forms.Label TurnLabel;
         private System.Windows.Forms.Label TurnValue;
+        private System.Windows.Forms.Button StopButton;
     }
 }
 

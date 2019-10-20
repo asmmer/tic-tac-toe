@@ -4,19 +4,23 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
-    class Game
+    public class Game
     {
         public Sign order;
-
         private bool isStarted = false;
-
         int xScore = 0,
             oScore = 0;
 
-        Grid grid = new Grid();
+        Grid grid;
+        MainForm mainForm;
 
         readonly Random random = new Random();
 
+        public Game(MainForm mainForm)
+        {
+            this.mainForm = mainForm;
+            grid = new Grid(this);
+        }
 
         public void Start()
         {
@@ -26,7 +30,7 @@ namespace TicTacToe
             SetGrid();
         }
 
-        private void CellClick()
+        public void CellClick()
         {
             if (IsWinCombination())
             {
@@ -44,6 +48,7 @@ namespace TicTacToe
         private void ToggleTurnValue()
         {
             order = (order == Sign.X) ? Sign.O : Sign.X;
+            mainForm.SetTurnValue(order);
         }
 
         public void SetScore(Sign winner)
@@ -74,7 +79,7 @@ namespace TicTacToe
         private void SetGrid()
         {
             if (grid == null ||
-                grid.GetGrid().Count / Settings.gridSize != Settings.gridSize)
+                grid.Value.Count / Settings.gridSize != Settings.gridSize)
             {
                 grid.SetGrid(Settings.gridSize);
             }
@@ -82,12 +87,17 @@ namespace TicTacToe
 
         public List<Button> GetGrid()
         {
-            return grid.GetGrid();
+            return grid.Value;
         }
 
-        private void ClearGrid()
+        public void ClearGrid()
         {
-            grid.ClearGrid();
+            grid.Clear();
+        }
+
+        private void DeleteGrid()
+        {
+            grid.Delete();
         }
     }
 }

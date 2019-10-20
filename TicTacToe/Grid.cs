@@ -7,7 +7,13 @@ namespace TicTacToe
 {
     public class Grid
     {
-        List<Button> grid = new List<Button>();
+        private List<Button> grid = new List<Button>();
+        private Game game;
+
+        public Grid(Game game)
+        {
+            this.game = game;
+        }
 
         // Methods.
         public void SetGrid(int gridSize)
@@ -23,7 +29,7 @@ namespace TicTacToe
 
             if (grid.Count > 0)
             {
-                ClearGrid();
+                Delete();
             }
 
             for (int rows = 0; rows < gridSize; rows++)
@@ -46,12 +52,23 @@ namespace TicTacToe
             }
         }
 
-        public List<Button> GetGrid()
+        public List<Button> Value
         {
-            return grid;
+            get
+            {
+                return grid;
+            }     
         }
 
-        public void ClearGrid()
+        public void Clear()
+        {
+            foreach (Button cell in grid)
+            {
+                cell.Text = String.Empty;
+            }
+        }
+
+        public void Delete()
         {
             grid.Clear();
         }
@@ -68,7 +85,8 @@ namespace TicTacToe
 
             if (IsEmptyCell(cell.Text))
             {
-                
+                cell.Text = $"{game.order}";
+                game.CellClick();
             }
         }
     }

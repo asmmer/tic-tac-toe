@@ -6,8 +6,8 @@ namespace TicTacToe
 {
     public partial class MainForm : Form
     {
-        SettingsForm settingsForm = new SettingsForm();
-        AboutProgramForm aboutProgramForm = new AboutProgramForm();
+        readonly SettingsForm settingsForm = new SettingsForm();
+        readonly AboutProgramForm aboutProgramForm = new AboutProgramForm();
 
         Game game;
 
@@ -15,19 +15,34 @@ namespace TicTacToe
         {
             InitializeComponent();
 
-            game = new Game();
+            game = new Game(this);
         }
 
         // Methods.
         private void StartGame()
         {
-            ClearGrid();
+            DeleteGrid();
 
             game.Start();
 
             SetTurnValue(game.order);
             SetGrid(game.GetGrid());
             SetTopPanelEnabled(true);
+
+            StartButton.Enabled = false;
+            SettingsButton.Enabled = false;
+
+            StopButton.Enabled = true;
+        }
+
+        private void StopGame()
+        {
+            game.ClearGrid();
+
+            StartButton.Enabled = true;
+            SettingsButton.Enabled = true;
+
+            StopButton.Enabled = false;
         }
 
         private void SetTopPanelEnabled(bool enabled)
@@ -35,7 +50,7 @@ namespace TicTacToe
             TopPanel.Enabled = enabled;
         }
 
-        private void SetTurnValue(Sign order)
+        public void SetTurnValue(Sign order)
         {
             TurnValue.Text = $"{order}";
         }
@@ -52,14 +67,13 @@ namespace TicTacToe
             }
         }
 
-        private void ClearGrid()
+        private void DeleteGrid()
         {
             if (GridPanel.Controls.Count > 0 &&
                 GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
             {
                 GridPanel.Controls.Clear();
             }
-
         }
 
         private void OpenSettingsForm()
@@ -86,6 +100,11 @@ namespace TicTacToe
         private void PlayButton_Click(object sender, EventArgs e)
         {
             StartGame();
+        }
+
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            StopGame();
         }
     }
 }
