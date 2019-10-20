@@ -90,6 +90,11 @@ namespace TicTacToe
             return grid.Value;
         }
 
+        public void ToggleEnabledGrid(bool enabled)
+        {
+            grid.ToggleEnabled(enabled);
+        }
+
         public void ClearGrid()
         {
             grid.Clear();

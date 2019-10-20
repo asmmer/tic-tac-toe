@@ -60,6 +60,14 @@ namespace TicTacToe
             }     
         }
 
+        public void ToggleEnabled(bool enabled)
+        {
+            foreach (Button cell in grid)
+            {
+                cell.Enabled = enabled;
+            }
+        }
+
         public void Clear()
         {
             foreach (Button cell in grid)

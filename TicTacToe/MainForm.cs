@@ -24,6 +24,7 @@ namespace TicTacToe
             DeleteGrid();
 
             game.Start();
+            game.ToggleEnabledGrid(true);
 
             SetTurnValue(game.order);
             SetGrid(game.GetGrid());
@@ -38,6 +39,7 @@ namespace TicTacToe
         private void StopGame()
         {
             game.ClearGrid();
+            game.ToggleEnabledGrid(false);
 
             StartButton.Enabled = true;
             SettingsButton.Enabled = true;
