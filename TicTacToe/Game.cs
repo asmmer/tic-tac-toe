@@ -17,12 +17,45 @@ namespace TicTacToe
 
         readonly Random random = new Random();
 
+
         public void Start()
         {
             isStarted = true;
             order = (random.Next(2) == 0) ? Sign.X : Sign.O;
 
             SetGrid();
+        }
+
+        private void CellClick()
+        {
+            if (IsWinCombination())
+            {
+                SetScore(order);
+                return;
+            }
+            ToggleTurnValue();
+        }
+
+        private bool IsWinCombination()
+        {
+            return false;
+        }
+
+        private void ToggleTurnValue()
+        {
+            order = (order == Sign.X) ? Sign.O : Sign.X;
+        }
+
+        public void SetScore(Sign winner)
+        {
+            if (winner == Sign.X)
+            {
+                xScore++;
+            }
+            else if (winner == Sign.O)
+            {
+                oScore++;
+            }
         }
 
         public void Pause()
@@ -40,7 +73,8 @@ namespace TicTacToe
 
         private void SetGrid()
         {
-            if (grid == null || (grid.GetGrid().Count / Settings.gridSize) != Settings.gridSize)
+            if (grid == null ||
+                grid.GetGrid().Count / Settings.gridSize != Settings.gridSize)
             {
                 grid.SetGrid(Settings.gridSize);
             }

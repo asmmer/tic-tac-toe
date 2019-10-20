@@ -9,6 +9,7 @@ namespace TicTacToe
     {
         List<Button> grid = new List<Button>();
 
+        // Methods.
         public void SetGrid(int gridSize)
         {
             if (gridSize < Constants.MIN_GRID_SIZE || gridSize > Constants.MAX_GRID_SIZE)
@@ -55,9 +56,20 @@ namespace TicTacToe
             grid.Clear();
         }
 
+        private bool IsEmptyCell(string cellValue)
+        {
+            return (String.IsNullOrEmpty(cellValue)) ? true : false;
+        }
+
+        // Handlers.
         private void CellButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Click!");
+            Button cell = (Button)sender;
+
+            if (IsEmptyCell(cell.Text))
+            {
+                
+            }
         }
     }
 }
