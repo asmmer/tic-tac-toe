@@ -17,6 +17,9 @@ namespace TicTacToe
             SetTheme();
 
             game = new Game(this);
+
+            UpdateScore();
+
             settingsForm = new SettingsForm(this);
             aboutProgramForm = new AboutProgramForm();
         }
@@ -47,6 +50,12 @@ namespace TicTacToe
             StopButton.Enabled = true;
         }
 
+        public void UpdateScore()
+        {
+            XScoreLabel.Text = $"{game.xScore}";
+            OScoreLabel.Text = $"{game.oScore}";
+        }
+
         private void RestartGame()
         {
             game.ClearGrid();
@@ -67,6 +76,7 @@ namespace TicTacToe
         public void StopGame()
         {
             game.ClearGrid();
+            game.ClearScore();
             game.ToggleEnabledGrid(false);
 
             StartButton.Enabled = true;
@@ -74,6 +84,8 @@ namespace TicTacToe
 
             RestartButton.Enabled = false;
             StopButton.Enabled = false;
+
+            UpdateScore();
         }
 
         private void SetTopPanelEnabled(bool enabled)
@@ -145,7 +157,5 @@ namespace TicTacToe
         {
             StopGame();
         }
-
-
     }
 }

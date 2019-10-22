@@ -31,6 +31,7 @@
             this.GameNameTitle = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.StopButton = new System.Windows.Forms.Button();
+            this.RestartButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.AboutProgramButton = new System.Windows.Forms.Button();
@@ -39,10 +40,15 @@
             this.TurnValue = new System.Windows.Forms.Label();
             this.TurnLabel = new System.Windows.Forms.Label();
             this.GridPanel = new System.Windows.Forms.Panel();
-            this.RestartButton = new System.Windows.Forms.Button();
+            this.ScorePanel = new System.Windows.Forms.Panel();
+            this.XLabel = new System.Windows.Forms.Label();
+            this.OLabel = new System.Windows.Forms.Label();
+            this.XScoreLabel = new System.Windows.Forms.Label();
+            this.OScoreLabel = new System.Windows.Forms.Label();
             this.SidePanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.TurnPanel.SuspendLayout();
+            this.ScorePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameNameTitle
@@ -90,6 +96,25 @@
             this.StopButton.Text = "Stop";
             this.StopButton.UseVisualStyleBackColor = true;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
+            // RestartButton
+            // 
+            this.RestartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RestartButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RestartButton.Enabled = false;
+            this.RestartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.RestartButton.FlatAppearance.BorderSize = 0;
+            this.RestartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RestartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RestartButton.Location = new System.Drawing.Point(12, 143);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(175, 50);
+            this.RestartButton.TabIndex = 1;
+            this.RestartButton.Text = "Restart";
+            this.RestartButton.UseVisualStyleBackColor = true;
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // StartButton
             // 
@@ -148,6 +173,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.TopPanel.Controls.Add(this.ScorePanel);
             this.TopPanel.Controls.Add(this.TurnPanel);
             this.TopPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -195,24 +221,55 @@
             this.GridPanel.Size = new System.Drawing.Size(584, 486);
             this.GridPanel.TabIndex = 3;
             // 
-            // RestartButton
+            // ScorePanel
             // 
-            this.RestartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RestartButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RestartButton.Enabled = false;
-            this.RestartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.RestartButton.FlatAppearance.BorderSize = 0;
-            this.RestartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RestartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RestartButton.Location = new System.Drawing.Point(12, 143);
-            this.RestartButton.Name = "RestartButton";
-            this.RestartButton.Size = new System.Drawing.Size(175, 50);
-            this.RestartButton.TabIndex = 1;
-            this.RestartButton.Text = "Restart";
-            this.RestartButton.UseVisualStyleBackColor = true;
-            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
+            this.ScorePanel.Controls.Add(this.OScoreLabel);
+            this.ScorePanel.Controls.Add(this.OLabel);
+            this.ScorePanel.Controls.Add(this.XScoreLabel);
+            this.ScorePanel.Controls.Add(this.XLabel);
+            this.ScorePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScorePanel.Location = new System.Drawing.Point(284, 0);
+            this.ScorePanel.Name = "ScorePanel";
+            this.ScorePanel.Size = new System.Drawing.Size(300, 75);
+            this.ScorePanel.TabIndex = 3;
+            // 
+            // XLabel
+            // 
+            this.XLabel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.XLabel.Location = new System.Drawing.Point(0, 0);
+            this.XLabel.Name = "XLabel";
+            this.XLabel.Size = new System.Drawing.Size(75, 75);
+            this.XLabel.TabIndex = 2;
+            this.XLabel.Text = "X";
+            this.XLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OLabel
+            // 
+            this.OLabel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.OLabel.Location = new System.Drawing.Point(150, 0);
+            this.OLabel.Name = "OLabel";
+            this.OLabel.Size = new System.Drawing.Size(75, 75);
+            this.OLabel.TabIndex = 2;
+            this.OLabel.Text = "O";
+            this.OLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XScoreLabel
+            // 
+            this.XScoreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.XScoreLabel.Location = new System.Drawing.Point(75, 0);
+            this.XScoreLabel.Name = "XScoreLabel";
+            this.XScoreLabel.Size = new System.Drawing.Size(75, 75);
+            this.XScoreLabel.TabIndex = 2;
+            this.XScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OScoreLabel
+            // 
+            this.OScoreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OScoreLabel.Location = new System.Drawing.Point(225, 0);
+            this.OScoreLabel.Name = "OScoreLabel";
+            this.OScoreLabel.Size = new System.Drawing.Size(75, 75);
+            this.OScoreLabel.TabIndex = 2;
+            this.OScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
@@ -232,6 +289,7 @@
             this.SidePanel.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
             this.TurnPanel.ResumeLayout(false);
+            this.ScorePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -250,6 +308,11 @@
         private System.Windows.Forms.Label TurnValue;
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Button RestartButton;
+        private System.Windows.Forms.Panel ScorePanel;
+        private System.Windows.Forms.Label OScoreLabel;
+        private System.Windows.Forms.Label OLabel;
+        private System.Windows.Forms.Label XScoreLabel;
+        private System.Windows.Forms.Label XLabel;
     }
 }
 

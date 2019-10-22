@@ -7,9 +7,8 @@ namespace TicTacToe
     public class Game
     {
         public Sign order;
-        private bool isStarted = false;
-        short xScore = 0,
-              oScore = 0;
+        public short xScore = 0,
+                     oScore = 0;
 
         Grid grid;
         MainForm mainForm;
@@ -24,7 +23,6 @@ namespace TicTacToe
 
         public void Start()
         {
-            isStarted = true;
             order = (random.Next(2) == 0) ? Sign.X : Sign.O;
 
             if (grid.Value.Count == 0 ||
@@ -40,6 +38,7 @@ namespace TicTacToe
             {
                 SetScore(order);
                 mainForm.PauseGame();
+                mainForm.UpdateScore();
 
                 MessageBox.Show($"{order} is won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -146,16 +145,15 @@ namespace TicTacToe
             }
         }
 
-        public void Pause()
+        public void ClearScore()
         {
-            isStarted = false;
+            xScore = 0;
+            oScore = 0;
         }
 
         public void ResetValues()
         {
-            isStarted = false;
-            xScore = 0;
-            oScore = 0;
+            ClearScore();
             grid = null;
         }
 

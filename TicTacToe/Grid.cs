@@ -9,7 +9,6 @@ namespace TicTacToe
     {
         private List<List<Button>> grid = new List<List<Button>>();
         private Game game;
-        private byte gridSize;
 
         public Grid(Game game)
         {
@@ -32,8 +31,6 @@ namespace TicTacToe
             {
                 Delete();
             }
-
-            this.gridSize = gridSize;
 
             for (int rows = 0; rows < gridSize; rows++)
             {
@@ -62,7 +59,7 @@ namespace TicTacToe
             get
             {
                 return grid;
-            }     
+            }
         }
 
         public void ToggleEnabled(bool enabled)
