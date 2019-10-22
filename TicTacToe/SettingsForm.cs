@@ -6,9 +6,13 @@ namespace TicTacToe
 {
     public partial class SettingsForm : Form
     {
-        public SettingsForm()
+        MainForm mainForm;
+        public SettingsForm(MainForm mainForm)
         {
             InitializeComponent();
+            SetTheme();
+
+            this.mainForm = mainForm;
 
             SetGridSizeNUD.Value = Settings.gridSize;
             foreach (RadioButton GameModeRadioButton in GameModePanel.Controls.OfType<RadioButton>())
@@ -30,6 +34,13 @@ namespace TicTacToe
         }
 
         // Methods.
+        private void SetTheme()
+        {
+            Visualization.SetTheme(this, Settings.theme, 1);
+            Visualization.SetTheme(SettingsTitle, Settings.theme, 0);
+            Visualization.SetTheme(SetGridSizeNUD, Settings.theme, 0);
+        }
+
         private void SaveSettings()
         {
             byte gridSize = Convert.ToByte(SetGridSizeNUD.Value);
@@ -43,6 +54,12 @@ namespace TicTacToe
         private void SaveSettingsButton_Click(object sender, EventArgs e)
         {
             SaveSettings();
+
+            SetTheme();
+            mainForm.SetTheme();
+
+            mainForm.DeleteGrid();
+
             Hide();
         }
     }

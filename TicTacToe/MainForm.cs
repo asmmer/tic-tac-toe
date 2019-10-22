@@ -6,16 +6,26 @@ namespace TicTacToe
 {
     public partial class MainForm : Form
     {
-        readonly SettingsForm settingsForm = new SettingsForm();
-        readonly AboutProgramForm aboutProgramForm = new AboutProgramForm();
+        readonly SettingsForm settingsForm;
+        readonly AboutProgramForm aboutProgramForm;
 
         Game game;
 
         public MainForm()
         {
             InitializeComponent();
+            SetTheme();
 
             game = new Game(this);
+            settingsForm = new SettingsForm(this);
+            aboutProgramForm = new AboutProgramForm();
+        }
+
+        public void SetTheme()
+        {
+            Visualization.SetTheme(SidePanel, Settings.theme, 0);
+            Visualization.SetTheme(TopPanel, Settings.theme, 0);
+            Visualization.SetTheme(GridPanel, Settings.theme, 1);
         }
 
         // Methods.
@@ -91,7 +101,7 @@ namespace TicTacToe
             }
         }
 
-        private void DeleteGrid()
+        public void DeleteGrid()
         {
             if (GridPanel.Controls.Count > 0 &&
                 GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)

@@ -48,6 +48,7 @@ namespace TicTacToe
                     cellButton.FlatStyle = FlatStyle.Flat;
                     cellButton.FlatAppearance.BorderColor = Color.FromArgb(215, 215, 215);
                     cellButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(210, 210, 210);
+                    cellButton.Font = new Font(cellButton.Font, FontStyle.Bold);
                     cellButton.TabStop = false;
                     cellButton.Click += CellButton_Click;
 
