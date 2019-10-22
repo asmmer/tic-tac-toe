@@ -33,10 +33,28 @@ namespace TicTacToe
             StartButton.Enabled = false;
             SettingsButton.Enabled = false;
 
+            RestartButton.Enabled = true;
             StopButton.Enabled = true;
         }
 
-        private void StopGame()
+        private void RestartGame()
+        {
+            game.ClearGrid();
+            game.ToggleEnabledGrid(true);
+        }
+
+        public void PauseGame()
+        {
+            game.ToggleEnabledGrid(false);
+
+            StartButton.Enabled = false;
+            SettingsButton.Enabled = false;
+
+            RestartButton.Enabled = true;
+            StopButton.Enabled = true;
+        }
+
+        public void StopGame()
         {
             game.ClearGrid();
             game.ToggleEnabledGrid(false);
@@ -44,6 +62,7 @@ namespace TicTacToe
             StartButton.Enabled = true;
             SettingsButton.Enabled = true;
 
+            RestartButton.Enabled = false;
             StopButton.Enabled = false;
         }
 
@@ -57,14 +76,17 @@ namespace TicTacToe
             TurnValue.Text = $"{order}";
         }
 
-        private void SetGrid(List<Button> grid)
+        private void SetGrid(List<List<Button>> grid)
         {
             if (GridPanel.Controls.Count == 0 && 
                 GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
             {
-                foreach (Button cell in grid)
+                for (byte rows = 0; rows < Settings.gridSize; rows++)
                 {
-                    GridPanel.Controls.Add(cell);
+                    for (byte columns = 0; columns < Settings.gridSize; columns++)
+                    {
+                        GridPanel.Controls.Add(grid[rows][columns]);
+                    }
                 }
             }
         }
@@ -104,9 +126,16 @@ namespace TicTacToe
             StartGame();
         }
 
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            RestartGame();
+        }
+
         private void StopButton_Click(object sender, EventArgs e)
         {
             StopGame();
         }
+
+
     }
 }

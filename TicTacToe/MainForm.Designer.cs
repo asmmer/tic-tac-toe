@@ -30,6 +30,7 @@
         {
             this.GameNameTitle = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.Panel();
+            this.StopButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.AboutProgramButton = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@
             this.TurnValue = new System.Windows.Forms.Label();
             this.TurnLabel = new System.Windows.Forms.Label();
             this.GridPanel = new System.Windows.Forms.Panel();
-            this.StopButton = new System.Windows.Forms.Button();
+            this.RestartButton = new System.Windows.Forms.Button();
             this.SidePanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.TurnPanel.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.SidePanel.Controls.Add(this.StopButton);
+            this.SidePanel.Controls.Add(this.RestartButton);
             this.SidePanel.Controls.Add(this.StartButton);
             this.SidePanel.Controls.Add(this.SettingsButton);
             this.SidePanel.Controls.Add(this.AboutProgramButton);
@@ -69,6 +71,25 @@
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(200, 561);
             this.SidePanel.TabIndex = 1;
+            // 
+            // StopButton
+            // 
+            this.StopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StopButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StopButton.Enabled = false;
+            this.StopButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.StopButton.FlatAppearance.BorderSize = 0;
+            this.StopButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StopButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StopButton.Location = new System.Drawing.Point(12, 387);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(175, 50);
+            this.StopButton.TabIndex = 1;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // StartButton
             // 
@@ -174,24 +195,24 @@
             this.GridPanel.Size = new System.Drawing.Size(584, 486);
             this.GridPanel.TabIndex = 3;
             // 
-            // StopButton
+            // RestartButton
             // 
-            this.StopButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.RestartButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.StopButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StopButton.Enabled = false;
-            this.StopButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.StopButton.FlatAppearance.BorderSize = 0;
-            this.StopButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StopButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StopButton.Location = new System.Drawing.Point(12, 143);
-            this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(175, 50);
-            this.StopButton.TabIndex = 1;
-            this.StopButton.Text = "Stop";
-            this.StopButton.UseVisualStyleBackColor = true;
-            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            this.RestartButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RestartButton.Enabled = false;
+            this.RestartButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.RestartButton.FlatAppearance.BorderSize = 0;
+            this.RestartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RestartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RestartButton.Location = new System.Drawing.Point(12, 143);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(175, 50);
+            this.RestartButton.TabIndex = 1;
+            this.RestartButton.Text = "Restart";
+            this.RestartButton.UseVisualStyleBackColor = true;
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // MainForm
             // 
@@ -228,6 +249,7 @@
         private System.Windows.Forms.Label TurnLabel;
         private System.Windows.Forms.Label TurnValue;
         private System.Windows.Forms.Button StopButton;
+        private System.Windows.Forms.Button RestartButton;
     }
 }
 

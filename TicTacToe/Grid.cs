@@ -7,8 +7,9 @@ namespace TicTacToe
 {
     public class Grid
     {
-        private List<Button> grid = new List<Button>();
+        private List<List<Button>> grid = new List<List<Button>>();
         private Game game;
+        private byte gridSize;
 
         public Grid(Game game)
         {
@@ -16,7 +17,7 @@ namespace TicTacToe
         }
 
         // Methods.
-        public void SetGrid(int gridSize)
+        public void SetGrid(byte gridSize)
         {
             if (gridSize < Constants.MIN_GRID_SIZE || gridSize > Constants.MAX_GRID_SIZE)
             {
@@ -32,8 +33,11 @@ namespace TicTacToe
                 Delete();
             }
 
+            this.gridSize = gridSize;
+
             for (int rows = 0; rows < gridSize; rows++)
             {
+                grid.Add(new List<Button>());
                 for (int columns = 0; columns < gridSize; columns++)
                 {
                     Button cellButton = new Button();
@@ -47,12 +51,12 @@ namespace TicTacToe
                     cellButton.TabStop = false;
                     cellButton.Click += CellButton_Click;
 
-                    grid.Add(cellButton);
+                    grid[rows].Add(cellButton);
                 }
             }
         }
 
-        public List<Button> Value
+        public List<List<Button>> Value
         {
             get
             {
@@ -62,17 +66,23 @@ namespace TicTacToe
 
         public void ToggleEnabled(bool enabled)
         {
-            foreach (Button cell in grid)
+            for (byte rows = 0; rows < Settings.gridSize; rows++)
             {
-                cell.Enabled = enabled;
+                for (byte columns = 0; columns < Settings.gridSize; columns++)
+                {
+                    grid[rows][columns].Enabled = enabled;
+                }
             }
         }
 
         public void Clear()
         {
-            foreach (Button cell in grid)
+            for (byte rows = 0; rows < Settings.gridSize; rows++)
             {
-                cell.Text = String.Empty;
+                for (byte columns = 0; columns < Settings.gridSize; columns++)
+                {
+                    grid[rows][columns].Text = String.Empty;
+                }
             }
         }
 

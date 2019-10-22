@@ -5,5 +5,4 @@
         PlayerVSPlayer = 0,
         PlayerVSBot = 1
     }
-
 }

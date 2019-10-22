@@ -8,8 +8,8 @@ namespace TicTacToe
     {
         public Sign order;
         private bool isStarted = false;
-        int xScore = 0,
-            oScore = 0;
+        short xScore = 0,
+              oScore = 0;
 
         Grid grid;
         MainForm mainForm;
@@ -27,7 +27,11 @@ namespace TicTacToe
             isStarted = true;
             order = (random.Next(2) == 0) ? Sign.X : Sign.O;
 
-            SetGrid();
+            if (grid.Value.Count == 0 ||
+                grid.Value.Count != Settings.gridSize)
+            {
+                SetGrid();
+            }
         }
 
         public void CellClick()
@@ -35,6 +39,10 @@ namespace TicTacToe
             if (IsWinCombination())
             {
                 SetScore(order);
+                mainForm.PauseGame();
+
+                MessageBox.Show($"{order} is won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 return;
             }
             ToggleTurnValue();
@@ -42,7 +50,82 @@ namespace TicTacToe
 
         private bool IsWinCombination()
         {
-            return false;
+            bool isWinCombination = true;
+
+            // Rows checking.
+
+            for (byte rows = 0; rows < Settings.gridSize; rows++)
+            {
+                isWinCombination = true;
+
+                for (byte columns = 0; columns < Settings.gridSize - 1; columns++)
+                {
+                    if (grid.Value[columns][rows].Text != grid.Value[columns + 1][rows].Text ||
+                        grid.Value[columns][rows].Text == String.Empty)
+                    {
+                        isWinCombination = false;
+                        break;
+                    }
+                }
+
+                if (isWinCombination)
+                {
+                    return isWinCombination;
+                }
+            }
+
+            // Columns checking.
+
+            for (byte rows = 0; rows < Settings.gridSize; rows++)
+            {
+                isWinCombination = true;
+
+                for (byte columns = 0; columns < Settings.gridSize - 1; columns++)
+                {
+                    if (grid.Value[rows][columns].Text != grid.Value[rows][columns + 1].Text ||
+                        grid.Value[rows][columns].Text == String.Empty)
+                    {
+                        isWinCombination = false;
+                        break;
+                    }
+                }
+
+                if (isWinCombination)
+                {
+                    return isWinCombination;
+                }
+            }
+
+            // Diagonals checking.
+
+            isWinCombination = true;
+            for (byte rows = 0; rows < Settings.gridSize - 1; rows++)
+            {
+                if (grid.Value[rows][rows].Text != grid.Value[rows + 1][rows + 1].Text ||
+                    grid.Value[rows][rows].Text == String.Empty)
+                {
+                    isWinCombination = false;
+                    break;
+                }
+            }
+
+            if (isWinCombination)
+            {
+                return isWinCombination;
+            }
+
+            isWinCombination = true;
+            for (byte rows = 0; rows < Settings.gridSize - 1; rows++)
+            {
+                if (grid.Value[rows][Settings.gridSize - rows - 1].Text != grid.Value[rows + 1][Settings.gridSize - rows - 2].Text ||
+                    grid.Value[rows][Settings.gridSize - rows - 1].Text == String.Empty)
+                {
+                    isWinCombination = false;
+                    break;
+                }
+            }
+
+            return isWinCombination;
         }
 
         private void ToggleTurnValue()
@@ -78,14 +161,10 @@ namespace TicTacToe
 
         private void SetGrid()
         {
-            if (grid == null ||
-                grid.Value.Count / Settings.gridSize != Settings.gridSize)
-            {
-                grid.SetGrid(Settings.gridSize);
-            }
+            grid.SetGrid(Settings.gridSize);
         }
 
-        public List<Button> GetGrid()
+        public List<List<Button>> GetGrid()
         {
             return grid.Value;
         }
