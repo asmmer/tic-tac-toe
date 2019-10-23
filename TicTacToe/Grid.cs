@@ -54,6 +54,22 @@ namespace TicTacToe
             }
         }
 
+        public bool IsFull()
+        {
+            for (byte rows = 0; rows < Settings.gridSize; rows++)
+            {
+                for (byte columns = 0; columns < Settings.gridSize; columns++)
+                {
+                    if (grid[rows][columns].Text == String.Empty)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
         public List<List<Button>> Value
         {
             get

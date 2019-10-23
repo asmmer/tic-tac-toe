@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TicTacToe
@@ -44,7 +45,44 @@ namespace TicTacToe
 
                 return;
             }
+
+            if (grid.IsFull())
+            {
+                mainForm.PauseGame();
+
+                MessageBox.Show("No one won", "Oops.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return;
+            }
+
+            if (Settings.gameMode == GameMode.PlayerVSBot)
+            {
+                ToggleTurnValue();
+                SetBotAnswer();
+
+                if (IsWinCombination())
+                {
+                    SetScore(order);
+                    mainForm.PauseGame();
+                    mainForm.UpdateScore();
+
+                    MessageBox.Show($"{order} is won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ToggleTurnValue();
+
+                    return;
+                }
+            }
+
             ToggleTurnValue();
+        }
+
+
+        private void SetBotAnswer()
+        {
+            Point botAnswer = Bot.GetAnswer(grid.Value);
+
+            grid.Value[botAnswer.X][botAnswer.Y].Text = $"{order}";
         }
 
         private bool IsWinCombination()

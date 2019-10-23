@@ -1,17 +1,24 @@
-﻿namespace TicTacToe
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace TicTacToe
 {
     class Bot
     {
-        private Sign sign;
+        static Random random = new Random();
 
-        public Bot(Sign sign)
+        public static Point GetAnswer(List<List<Button>> grid)
         {
-            this.sign = sign;
-        }
+            Point botAnswer = new Point();
 
-        public int[] getAnswer(int[] playGrid)
-        {
-            int[] botAnswer = new int[2];
+            do
+            {
+                botAnswer.X = random.Next(grid.Count);
+                botAnswer.Y = random.Next(grid.Count);
+            }
+            while (grid[botAnswer.X][botAnswer.Y].Text != String.Empty);
 
             return botAnswer;
         }

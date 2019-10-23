@@ -43,6 +43,8 @@ namespace TicTacToe
             SetGrid(game.GetGrid());
             SetTopPanelEnabled(true);
 
+            TurnPanel.Visible = (Settings.gameMode == GameMode.PlayerVSPlayer) ? true : false;
+
             StartButton.Enabled = false;
             SettingsButton.Enabled = false;
 

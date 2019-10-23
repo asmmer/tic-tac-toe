@@ -36,19 +36,19 @@
             this.SettingsButton = new System.Windows.Forms.Button();
             this.AboutProgramButton = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.ScorePanel = new System.Windows.Forms.Panel();
+            this.OScoreLabel = new System.Windows.Forms.Label();
+            this.OLabel = new System.Windows.Forms.Label();
+            this.XScoreLabel = new System.Windows.Forms.Label();
+            this.XLabel = new System.Windows.Forms.Label();
             this.TurnPanel = new System.Windows.Forms.Panel();
             this.TurnValue = new System.Windows.Forms.Label();
             this.TurnLabel = new System.Windows.Forms.Label();
             this.GridPanel = new System.Windows.Forms.Panel();
-            this.ScorePanel = new System.Windows.Forms.Panel();
-            this.XLabel = new System.Windows.Forms.Label();
-            this.OLabel = new System.Windows.Forms.Label();
-            this.XScoreLabel = new System.Windows.Forms.Label();
-            this.OScoreLabel = new System.Windows.Forms.Label();
             this.SidePanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
-            this.TurnPanel.SuspendLayout();
             this.ScorePanel.SuspendLayout();
+            this.TurnPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameNameTitle
@@ -183,6 +183,56 @@
             this.TopPanel.Size = new System.Drawing.Size(584, 75);
             this.TopPanel.TabIndex = 2;
             // 
+            // ScorePanel
+            // 
+            this.ScorePanel.Controls.Add(this.OScoreLabel);
+            this.ScorePanel.Controls.Add(this.OLabel);
+            this.ScorePanel.Controls.Add(this.XScoreLabel);
+            this.ScorePanel.Controls.Add(this.XLabel);
+            this.ScorePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScorePanel.Location = new System.Drawing.Point(284, 0);
+            this.ScorePanel.Name = "ScorePanel";
+            this.ScorePanel.Size = new System.Drawing.Size(300, 75);
+            this.ScorePanel.TabIndex = 3;
+            // 
+            // OScoreLabel
+            // 
+            this.OScoreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OScoreLabel.Location = new System.Drawing.Point(225, 0);
+            this.OScoreLabel.Name = "OScoreLabel";
+            this.OScoreLabel.Size = new System.Drawing.Size(75, 75);
+            this.OScoreLabel.TabIndex = 2;
+            this.OScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OLabel
+            // 
+            this.OLabel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.OLabel.Location = new System.Drawing.Point(150, 0);
+            this.OLabel.Name = "OLabel";
+            this.OLabel.Size = new System.Drawing.Size(75, 75);
+            this.OLabel.TabIndex = 2;
+            this.OLabel.Text = "O";
+            this.OLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XScoreLabel
+            // 
+            this.XScoreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.XScoreLabel.Location = new System.Drawing.Point(75, 0);
+            this.XScoreLabel.Name = "XScoreLabel";
+            this.XScoreLabel.Size = new System.Drawing.Size(75, 75);
+            this.XScoreLabel.TabIndex = 2;
+            this.XScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // XLabel
+            // 
+            this.XLabel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.XLabel.Location = new System.Drawing.Point(0, 0);
+            this.XLabel.Name = "XLabel";
+            this.XLabel.Size = new System.Drawing.Size(75, 75);
+            this.XLabel.TabIndex = 2;
+            this.XLabel.Text = "X";
+            this.XLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TurnPanel
             // 
             this.TurnPanel.Controls.Add(this.TurnValue);
@@ -192,6 +242,7 @@
             this.TurnPanel.Name = "TurnPanel";
             this.TurnPanel.Size = new System.Drawing.Size(200, 75);
             this.TurnPanel.TabIndex = 2;
+            this.TurnPanel.Visible = false;
             // 
             // TurnValue
             // 
@@ -221,56 +272,6 @@
             this.GridPanel.Size = new System.Drawing.Size(584, 486);
             this.GridPanel.TabIndex = 3;
             // 
-            // ScorePanel
-            // 
-            this.ScorePanel.Controls.Add(this.OScoreLabel);
-            this.ScorePanel.Controls.Add(this.OLabel);
-            this.ScorePanel.Controls.Add(this.XScoreLabel);
-            this.ScorePanel.Controls.Add(this.XLabel);
-            this.ScorePanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ScorePanel.Location = new System.Drawing.Point(284, 0);
-            this.ScorePanel.Name = "ScorePanel";
-            this.ScorePanel.Size = new System.Drawing.Size(300, 75);
-            this.ScorePanel.TabIndex = 3;
-            // 
-            // XLabel
-            // 
-            this.XLabel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.XLabel.Location = new System.Drawing.Point(0, 0);
-            this.XLabel.Name = "XLabel";
-            this.XLabel.Size = new System.Drawing.Size(75, 75);
-            this.XLabel.TabIndex = 2;
-            this.XLabel.Text = "X";
-            this.XLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OLabel
-            // 
-            this.OLabel.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.OLabel.Location = new System.Drawing.Point(150, 0);
-            this.OLabel.Name = "OLabel";
-            this.OLabel.Size = new System.Drawing.Size(75, 75);
-            this.OLabel.TabIndex = 2;
-            this.OLabel.Text = "O";
-            this.OLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XScoreLabel
-            // 
-            this.XScoreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.XScoreLabel.Location = new System.Drawing.Point(75, 0);
-            this.XScoreLabel.Name = "XScoreLabel";
-            this.XScoreLabel.Size = new System.Drawing.Size(75, 75);
-            this.XScoreLabel.TabIndex = 2;
-            this.XScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // OScoreLabel
-            // 
-            this.OScoreLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OScoreLabel.Location = new System.Drawing.Point(225, 0);
-            this.OScoreLabel.Name = "OScoreLabel";
-            this.OScoreLabel.Size = new System.Drawing.Size(75, 75);
-            this.OScoreLabel.TabIndex = 2;
-            this.OScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,8 +289,8 @@
             this.Text = "TicTacToe";
             this.SidePanel.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
-            this.TurnPanel.ResumeLayout(false);
             this.ScorePanel.ResumeLayout(false);
+            this.TurnPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
