@@ -80,7 +80,7 @@ namespace TicTacToe
 
         private void SetBotAnswer()
         {
-            Point botAnswer = Bot.GetAnswer(grid.Value);
+            Point botAnswer = Bot.GetAnswer(grid.Value, order);
 
             grid.Value[botAnswer.X][botAnswer.Y].Text = $"{order}";
         }
