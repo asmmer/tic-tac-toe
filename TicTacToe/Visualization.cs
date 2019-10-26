@@ -3,13 +3,12 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
-    static class Visualization
+    internal static class Visualization
     {
-        readonly static Color LIGHT_COLOR_1 = Color.FromArgb(247, 247, 247);
-        readonly static Color LIGHT_COLOR_2 = Color.FromArgb(255, 255, 255);
-
-        readonly static Color DARK_COLOR_1 = Color.FromArgb(36, 36, 36);
-        readonly static Color DARK_COLOR_2 = Color.FromArgb(24, 24, 24);
+        private static readonly Color LIGHT_COLOR_1 = Color.FromArgb(247, 247, 247);
+        private static readonly Color LIGHT_COLOR_2 = Color.FromArgb(255, 255, 255);
+        private static readonly Color DARK_COLOR_1 = Color.FromArgb(36, 36, 36);
+        private static readonly Color DARK_COLOR_2 = Color.FromArgb(24, 24, 24);
 
         public static void SetTheme(Control control, Theme theme, byte colorType)
         {

@@ -88,7 +88,7 @@
             this.StopButton.FlatAppearance.BorderSize = 0;
             this.StopButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StopButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StopButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StopButton.Location = new System.Drawing.Point(12, 387);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(175, 50);
@@ -107,7 +107,7 @@
             this.RestartButton.FlatAppearance.BorderSize = 0;
             this.RestartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RestartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RestartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RestartButton.Location = new System.Drawing.Point(12, 143);
             this.RestartButton.Name = "RestartButton";
             this.RestartButton.Size = new System.Drawing.Size(175, 50);
@@ -125,7 +125,7 @@
             this.StartButton.FlatAppearance.BorderSize = 0;
             this.StartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartButton.Location = new System.Drawing.Point(12, 87);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(175, 50);
@@ -143,7 +143,7 @@
             this.SettingsButton.FlatAppearance.BorderSize = 0;
             this.SettingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SettingsButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SettingsButton.Location = new System.Drawing.Point(12, 443);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(175, 50);
@@ -161,7 +161,7 @@
             this.AboutProgramButton.FlatAppearance.BorderSize = 0;
             this.AboutProgramButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.AboutProgramButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AboutProgramButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutProgramButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AboutProgramButton.Location = new System.Drawing.Point(12, 499);
             this.AboutProgramButton.Name = "AboutProgramButton";
             this.AboutProgramButton.Size = new System.Drawing.Size(175, 50);

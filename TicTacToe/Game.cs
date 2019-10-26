@@ -10,11 +10,9 @@ namespace TicTacToe
         public Sign order;
         public short xScore = 0,
                      oScore = 0;
-
-        Grid grid;
-        MainForm mainForm;
-
-        readonly Random random = new Random();
+        private Grid grid;
+        private readonly MainForm mainForm;
+        private readonly Random random = new Random();
 
         public Game(MainForm mainForm)
         {
@@ -87,7 +85,7 @@ namespace TicTacToe
 
         private bool IsWinCombination()
         {
-            bool isWinCombination = true;
+            bool isWinCombination;
 
             // Rows checking.
 

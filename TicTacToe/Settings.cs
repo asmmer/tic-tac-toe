@@ -1,12 +1,12 @@
 ﻿namespace TicTacToe
 {
-    class Settings
+    internal class Settings
     {
         public static byte gridSize = Properties.Settings.Default.gridSize;
         public static GameMode gameMode = (GameMode)Properties.Settings.Default.gameMode;
         public static Theme theme = (Theme)Properties.Settings.Default.theme;
 
-        static public void Set(byte gridSize, GameMode gameMode, Theme theme)
+        public static void Set(byte gridSize, GameMode gameMode, Theme theme)
         {
             Settings.gridSize = gridSize;
             Settings.gameMode = gameMode;
@@ -15,7 +15,7 @@
             Save();
         }
 
-        static public void Save()
+        public static void Save()
         {
             Properties.Settings.Default.gridSize = Settings.gridSize;
             Properties.Settings.Default.gameMode = (byte)Settings.gameMode;

@@ -6,10 +6,9 @@ namespace TicTacToe
 {
     public partial class MainForm : Form
     {
-        readonly SettingsForm settingsForm;
-        readonly AboutProgramForm aboutProgramForm;
-
-        Game game;
+        private readonly SettingsForm settingsForm;
+        private readonly AboutProgramForm aboutProgramForm;
+        private readonly Game game;
 
         public MainForm()
         {
@@ -102,7 +101,7 @@ namespace TicTacToe
 
         private void SetGrid(List<List<Button>> grid)
         {
-            if (GridPanel.Controls.Count == 0 && 
+            if (GridPanel.Controls.Count == 0 &&
                 GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
             {
                 for (byte rows = 0; rows < Settings.gridSize; rows++)

@@ -6,7 +6,7 @@ namespace TicTacToe
 {
     public partial class SettingsForm : Form
     {
-        MainForm mainForm;
+        private readonly MainForm mainForm;
         public SettingsForm(MainForm mainForm)
         {
             InitializeComponent();

@@ -38,7 +38,7 @@ namespace TicTacToe
                     }
                 }
 
-                if (botCells == grid.Count - 1 && 
+                if (botCells == grid.Count - 1 &&
                     grid[emptyCell.X][emptyCell.Y].Text == string.Empty)
                 {
                     return emptyCell;

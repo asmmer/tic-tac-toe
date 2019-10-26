@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    enum GameMode
+    internal enum GameMode
     {
         PlayerVSPlayer = 0,
         PlayerVSBot = 1

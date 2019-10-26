@@ -138,7 +138,7 @@
             // 
             this.PVBRadioButton.AutoSize = true;
             this.PVBRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.PVBRadioButton.Location = new System.Drawing.Point(287, 11);
+            this.PVBRadioButton.Location = new System.Drawing.Point(324, 13);
             this.PVBRadioButton.Name = "PVBRadioButton";
             this.PVBRadioButton.Size = new System.Drawing.Size(121, 25);
             this.PVBRadioButton.TabIndex = 3;
@@ -185,7 +185,7 @@
             // 
             this.DarkThemeRadioButton.AutoSize = true;
             this.DarkThemeRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DarkThemeRadioButton.Location = new System.Drawing.Point(287, 11);
+            this.DarkThemeRadioButton.Location = new System.Drawing.Point(324, 11);
             this.DarkThemeRadioButton.Name = "DarkThemeRadioButton";
             this.DarkThemeRadioButton.Size = new System.Drawing.Size(61, 25);
             this.DarkThemeRadioButton.TabIndex = 3;

@@ -32,20 +32,33 @@ namespace TicTacToe
                 Delete();
             }
 
-            for (int rows = 0; rows < gridSize; rows++)
+            int adjustableValue = (gridSize == 4) ? 40 :
+                                  (gridSize == 5) ? 60 : 
+                                  (gridSize == 6) ? 75 : 
+                                  (gridSize == 7) ? 85 : 
+                                  (gridSize == 8) ? 90 : 
+                                  (gridSize == 9) ? 100 :
+                                  (gridSize == 10) ? 105 :
+                                  (gridSize == 11) ? 108 :
+                                  (gridSize == 12) ? 111 : 
+                                  (gridSize == 13) ? 114 :
+                                  (gridSize == 14) ? 117 :
+                                  (gridSize == 15) ? 120 : 0;
+
+            for (byte rows = 0; rows < gridSize; rows++)
             {
                 grid.Add(new List<Button>());
-                for (int columns = 0; columns < gridSize; columns++)
+                for (byte columns = 0; columns < gridSize; columns++)
                 {
                     Button cellButton = new Button();
 
-                    cellButton.Size = new Size(50, 50);
-                    cellButton.Location = new Point(rows * 50, columns * 50);
+                    cellButton.Size = new Size(Constants.CELL_SIZE - adjustableValue, Constants.CELL_SIZE - adjustableValue);
+                    cellButton.Location = new Point(rows * (Constants.CELL_SIZE - adjustableValue), columns * (Constants.CELL_SIZE - adjustableValue));
                     cellButton.Cursor = Cursors.Hand;
                     cellButton.FlatStyle = FlatStyle.Flat;
                     cellButton.FlatAppearance.BorderColor = Color.FromArgb(215, 215, 215);
                     cellButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(210, 210, 210);
-                    cellButton.Font = new Font(cellButton.Font, FontStyle.Bold);
+                    cellButton.Font = new Font(cellButton.Font.Name, (Constants.CELL_SIZE - adjustableValue) / 3, FontStyle.Bold);
                     cellButton.TabStop = false;
                     cellButton.Click += CellButton_Click;
 
