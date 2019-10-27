@@ -242,8 +242,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Settings";
             this.GridSizePanel.ResumeLayout(false);
             this.GridSizePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SetGridSizeNUD)).EndInit();
