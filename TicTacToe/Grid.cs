@@ -7,7 +7,7 @@ namespace TicTacToe
 {
     public class Grid
     {
-        private List<List<Button>> grid = new List<List<Button>>();
+        public List<List<Button>> Value { get; } = new List<List<Button>>();
         private Game game;
 
         public Grid(Game game)
@@ -27,7 +27,7 @@ namespace TicTacToe
                 return;
             }
 
-            if (grid.Count > 0)
+            if (Value.Count > 0)
             {
                 Delete();
             }
@@ -47,7 +47,7 @@ namespace TicTacToe
 
             for (byte rows = 0; rows < gridSize; rows++)
             {
-                grid.Add(new List<Button>());
+                Value.Add(new List<Button>());
                 for (byte columns = 0; columns < gridSize; columns++)
                 {
                     Button cellButton = new Button();
@@ -62,7 +62,7 @@ namespace TicTacToe
                     cellButton.TabStop = false;
                     cellButton.Click += CellButton_Click;
 
-                    grid[rows].Add(cellButton);
+                    Value[rows].Add(cellButton);
                 }
             }
         }
@@ -73,7 +73,7 @@ namespace TicTacToe
             {
                 for (byte columns = 0; columns < Settings.gridSize; columns++)
                 {
-                    if (grid[rows][columns].Text == String.Empty)
+                    if (Value[rows][columns].Text == String.Empty)
                     {
                         return false;
                     }
@@ -83,21 +83,13 @@ namespace TicTacToe
             return true;
         }
 
-        public List<List<Button>> Value
-        {
-            get
-            {
-                return grid;
-            }
-        }
-
         public void ToggleEnabled(bool enabled)
         {
             for (byte rows = 0; rows < Settings.gridSize; rows++)
             {
                 for (byte columns = 0; columns < Settings.gridSize; columns++)
                 {
-                    grid[rows][columns].Enabled = enabled;
+                    Value[rows][columns].Enabled = enabled;
                 }
             }
         }
@@ -108,14 +100,14 @@ namespace TicTacToe
             {
                 for (byte columns = 0; columns < Settings.gridSize; columns++)
                 {
-                    grid[rows][columns].Text = String.Empty;
+                    Value[rows][columns].Text = String.Empty;
                 }
             }
         }
 
         public void Delete()
         {
-            grid.Clear();
+            Value.Clear();
         }
 
         private bool IsEmptyCell(string cellValue)

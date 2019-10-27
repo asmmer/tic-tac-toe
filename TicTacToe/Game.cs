@@ -39,7 +39,7 @@ namespace TicTacToe
                 mainForm.PauseGame();
                 mainForm.UpdateScore();
 
-                MessageBox.Show($"{order} is won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{order} won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return;
             }
@@ -48,7 +48,7 @@ namespace TicTacToe
             {
                 mainForm.PauseGame();
 
-                MessageBox.Show("No one won", "Oops.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No one won.", "Oops.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return;
             }
@@ -64,9 +64,18 @@ namespace TicTacToe
                     mainForm.PauseGame();
                     mainForm.UpdateScore();
 
-                    MessageBox.Show($"{order} is won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"{order} won.", "WIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ToggleTurnValue();
+
+                    return;
+                }
+
+                if (grid.IsFull())
+                {
+                    mainForm.PauseGame();
+
+                    MessageBox.Show("No one won.", "Oops.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     return;
                 }
