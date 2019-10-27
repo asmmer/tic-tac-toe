@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TicTacToe
@@ -46,6 +47,7 @@ namespace TicTacToe
 
             StartButton.Enabled = false;
             SettingsButton.Enabled = false;
+            TipLabel.Hide();
 
             RestartButton.Enabled = true;
             StopButton.Enabled = true;
@@ -82,6 +84,7 @@ namespace TicTacToe
 
             StartButton.Enabled = true;
             SettingsButton.Enabled = true;
+            TipLabel.Show();
 
             RestartButton.Enabled = false;
             StopButton.Enabled = false;
@@ -101,8 +104,8 @@ namespace TicTacToe
 
         private void SetGrid(List<List<Button>> grid)
         {
-            if (GridPanel.Controls.Count == 0 &&
-                GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
+            if (GridPanel.Controls.OfType<Button>().ToList().Count == 0 &&
+                GridPanel.Controls.OfType<Button>().ToList().Count / Settings.gridSize != Settings.gridSize)
             {
                 for (byte rows = 0; rows < Settings.gridSize; rows++)
                 {
@@ -116,10 +119,10 @@ namespace TicTacToe
 
         public void DeleteGrid()
         {
-            if (GridPanel.Controls.Count > 0 &&
-                GridPanel.Controls.Count / Settings.gridSize != Settings.gridSize)
+            if (GridPanel.Controls.OfType<Button>().ToList().Count > 0 &&
+                GridPanel.Controls.OfType<Button>().ToList().Count / Settings.gridSize != Settings.gridSize)
             {
-                GridPanel.Controls.Clear();
+                GridPanel.Controls.OfType<Button>().ToList().ForEach(cell => cell.Dispose());
             }
         }
 

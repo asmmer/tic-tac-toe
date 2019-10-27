@@ -45,10 +45,12 @@
             this.TurnValue = new System.Windows.Forms.Label();
             this.TurnLabel = new System.Windows.Forms.Label();
             this.GridPanel = new System.Windows.Forms.Panel();
+            this.TipLabel = new System.Windows.Forms.Label();
             this.SidePanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.ScorePanel.SuspendLayout();
             this.TurnPanel.SuspendLayout();
+            this.GridPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameNameTitle
@@ -265,12 +267,24 @@
             // 
             // GridPanel
             // 
+            this.GridPanel.Controls.Add(this.TipLabel);
             this.GridPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.GridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPanel.Location = new System.Drawing.Point(200, 75);
             this.GridPanel.Name = "GridPanel";
             this.GridPanel.Size = new System.Drawing.Size(584, 486);
             this.GridPanel.TabIndex = 3;
+            // 
+            // TipLabel
+            // 
+            this.TipLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TipLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TipLabel.Location = new System.Drawing.Point(0, 0);
+            this.TipLabel.Name = "TipLabel";
+            this.TipLabel.Size = new System.Drawing.Size(584, 486);
+            this.TipLabel.TabIndex = 0;
+            this.TipLabel.Text = "Press \"Play\" to start";
+            this.TipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -291,6 +305,7 @@
             this.TopPanel.ResumeLayout(false);
             this.ScorePanel.ResumeLayout(false);
             this.TurnPanel.ResumeLayout(false);
+            this.GridPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -314,6 +329,7 @@
         private System.Windows.Forms.Label OLabel;
         private System.Windows.Forms.Label XScoreLabel;
         private System.Windows.Forms.Label XLabel;
+        private System.Windows.Forms.Label TipLabel;
     }
 }
 
