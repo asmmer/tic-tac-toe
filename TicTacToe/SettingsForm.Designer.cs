@@ -137,6 +137,7 @@
             // PVBRadioButton
             // 
             this.PVBRadioButton.AutoSize = true;
+            this.PVBRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PVBRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.PVBRadioButton.Location = new System.Drawing.Point(324, 13);
             this.PVBRadioButton.Name = "PVBRadioButton";
@@ -150,6 +151,7 @@
             // PVPRadioButton
             // 
             this.PVPRadioButton.AutoSize = true;
+            this.PVPRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PVPRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.PVPRadioButton.Location = new System.Drawing.Point(140, 11);
             this.PVPRadioButton.Name = "PVPRadioButton";
@@ -184,6 +186,7 @@
             // DarkThemeRadioButton
             // 
             this.DarkThemeRadioButton.AutoSize = true;
+            this.DarkThemeRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DarkThemeRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.DarkThemeRadioButton.Location = new System.Drawing.Point(324, 11);
             this.DarkThemeRadioButton.Name = "DarkThemeRadioButton";
@@ -197,6 +200,7 @@
             // LightThemeRadioButton
             // 
             this.LightThemeRadioButton.AutoSize = true;
+            this.LightThemeRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LightThemeRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.LightThemeRadioButton.Location = new System.Drawing.Point(140, 11);
             this.LightThemeRadioButton.Name = "LightThemeRadioButton";
