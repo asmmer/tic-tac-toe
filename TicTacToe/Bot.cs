@@ -12,10 +12,10 @@ namespace TicTacToe
         public static Point GetAnswer(List<List<Button>> grid, Sign botOrder)
         {
             Point botAnswer = new Point();
-            Point emptyCell = new Point();
+            Point emptyCell;
 
-            byte botCells = 0;
-            byte playerCells = 0;
+            byte botCells;
+            byte playerCells;
 
             // ATTACK.
 

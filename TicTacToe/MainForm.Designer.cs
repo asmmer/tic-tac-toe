@@ -34,6 +34,7 @@
             this.StartButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.AboutProgramButton = new System.Windows.Forms.Button();
+            this.GameNameTitle = new System.Windows.Forms.Label();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.ScorePanel = new System.Windows.Forms.Panel();
             this.OScoreLabel = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.TurnLabel = new System.Windows.Forms.Label();
             this.GridPanel = new System.Windows.Forms.Panel();
             this.TipLabel = new System.Windows.Forms.Label();
-            this.GameNameTitle = new System.Windows.Forms.Label();
             this.SidePanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.ScorePanel.SuspendLayout();
@@ -161,6 +161,17 @@
             this.AboutProgramButton.UseVisualStyleBackColor = true;
             this.AboutProgramButton.Click += new System.EventHandler(this.AboutProgramButton_Click);
             // 
+            // GameNameTitle
+            // 
+            this.GameNameTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GameNameTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GameNameTitle.Location = new System.Drawing.Point(0, 0);
+            this.GameNameTitle.Name = "GameNameTitle";
+            this.GameNameTitle.Size = new System.Drawing.Size(200, 75);
+            this.GameNameTitle.TabIndex = 0;
+            this.GameNameTitle.Text = "TicTacToe";
+            this.GameNameTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
@@ -263,6 +274,7 @@
             this.GridPanel.Name = "GridPanel";
             this.GridPanel.Size = new System.Drawing.Size(584, 486);
             this.GridPanel.TabIndex = 3;
+            this.GridPanel.Resize += new System.EventHandler(this.GridPanel_Resize);
             // 
             // TipLabel
             // 
@@ -274,17 +286,6 @@
             this.TipLabel.TabIndex = 0;
             this.TipLabel.Text = "Press \"Play\" to start";
             this.TipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // GameNameTitle
-            // 
-            this.GameNameTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GameNameTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GameNameTitle.Location = new System.Drawing.Point(0, 0);
-            this.GameNameTitle.Name = "GameNameTitle";
-            this.GameNameTitle.Size = new System.Drawing.Size(200, 75);
-            this.GameNameTitle.TabIndex = 0;
-            this.GameNameTitle.Text = "TicTacToe";
-            this.GameNameTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -40,7 +41,8 @@ namespace TicTacToe
             game.ToggleEnabledGrid(true);
 
             SetTurnValue(game.order);
-            SetGrid(game.GetGrid());
+            SetGrid();
+            ResizeGrid();
             SetTopPanelEnabled(true);
 
             TurnPanel.Visible = (Settings.gameMode == GameMode.PlayerVSPlayer) ? true : false;
@@ -102,8 +104,10 @@ namespace TicTacToe
             TurnValue.Text = $"{order}";
         }
 
-        private void SetGrid(List<List<Button>> grid)
+        private void SetGrid()
         {
+            List<List<Button>> grid = game.GetGrid();
+
             if (GridPanel.Controls.OfType<Button>().ToList().Count == 0 &&
                 GridPanel.Controls.OfType<Button>().ToList().Count / Settings.gridSize != Settings.gridSize)
             {
@@ -113,6 +117,31 @@ namespace TicTacToe
                     {
                         GridPanel.Controls.Add(grid[rows][columns]);
                     }
+                }
+            }
+        }
+
+        private void ResizeGrid()
+        {
+            List<List<Button>> grid = game.GetGrid();
+
+            for (byte rows = 0; rows < Settings.gridSize; rows++)
+            {
+                for (byte columns = 0; columns < Settings.gridSize; columns++)
+                {
+                    Button cellButton = grid[rows][columns];
+
+                    // Size calculating.
+                    short x = Convert.ToInt16(this.GridPanel.Width * columns / Settings.gridSize);
+                    short y = Convert.ToInt16(this.GridPanel.Height * rows / Settings.gridSize);
+                    short width = Convert.ToInt16(this.GridPanel.Width / Settings.gridSize);
+                    short height = Convert.ToInt16(this.GridPanel.Height / Settings.gridSize);
+                    short fontSize = Convert.ToInt16(width / 3);
+
+                    // Resizing.
+                    cellButton.Location = new Point(x, y);
+                    cellButton.Size = new Size(width, height);
+                    cellButton.Font = new Font(cellButton.Font.Name, fontSize, FontStyle.Bold);
                 }
             }
         }
@@ -137,6 +166,11 @@ namespace TicTacToe
         }
 
         // Handlers.
+        private void GridPanel_Resize(object sender, EventArgs e)
+        {
+            ResizeGrid();
+        }
+
         private void SettingsButton_Click(object sender, EventArgs e)
         {
             OpenSettingsForm();
